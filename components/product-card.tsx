@@ -33,7 +33,8 @@ export function ProductCard({ product, onExpand, isExpanded }: ProductCardProps)
         onClick={!isExpanded ? toggleExpand : undefined}
       >
         <CardHeader className="p-0">
-          <div className="relative h-48 w-full overflow-hidden">
+        <div className="relative h-72 md:h-80 lg:h-[24rem] xl:h-[28rem] w-full overflow-hidden">
+
             <Image
               src={product.mainImage || "/placeholder.svg"}
               alt={product.name}
