@@ -24,7 +24,7 @@ export function ProductCard({ product, onExpand, isExpanded }: ProductCardProps)
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.3 }}
-      className={`relative w-full ${isExpanded ? "md:col-span-2 lg:col-span-3 xl:col-span-4" : ""}`}
+      className={`relative w-full mx-auto ${isExpanded ? "md:col-span-2 max-w-4xl" : "max-w-sm"}`}
     >
       <Card
         className={`overflow-hidden transition-all duration-500 ${
@@ -33,14 +33,12 @@ export function ProductCard({ product, onExpand, isExpanded }: ProductCardProps)
         onClick={!isExpanded ? toggleExpand : undefined}
       >
         <CardHeader className="p-0">
-        <div className="relative h-72 md:h-80 lg:h-[24rem] xl:h-[28rem] w-full overflow-hidden">
-
+          <div className="relative h-48 w-full overflow-hidden">
             <Image
               src={product.mainImage || "/placeholder.svg"}
               alt={product.name}
               fill
-              className="object-contain transition-transform duration-300"
-
+              className="object-cover transition-transform duration-300 hover:scale-105"
             />
             {product.isNew && (
               <Badge
@@ -133,7 +131,7 @@ export function ProductCard({ product, onExpand, isExpanded }: ProductCardProps)
                   >
                     Incluye
                   </h3>
-                  <ul className="mt-2 grid grid-cols-2 gap-2 text-sm">
+                  <ul className="mt-2 grid grid-cols-1 gap-2 text-sm sm:grid-cols-2">
                     {product.items.map((item, index) => (
                       <li key={index} className="flex items-center gap-2">
                         <svg
@@ -156,23 +154,34 @@ export function ProductCard({ product, onExpand, isExpanded }: ProductCardProps)
                   </ul>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
-                  {product.additionalImages.map((image, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: index * 0.1 }}
-                      className="relative h-40 overflow-hidden rounded-md"
-                    >
-                      <Image
-                        src={image || "/placeholder.svg"}
-                        alt={`${product.name} - Imagen ${index + 1}`}
-                        fill
-                        className="object-cover"
-                      />
-                    </motion.div>
-                  ))}
+                <div>
+                  <h3
+                    className={`text-xl font-semibold mb-3 ${
+                      product.colors
+                        ? `bg-gradient-to-r ${product.colors.textGradient} bg-clip-text text-transparent`
+                        : ""
+                    }`}
+                  >
+                    Galería
+                  </h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    {product.additionalImages.map((image, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: index * 0.1 }}
+                        className="relative h-40 overflow-hidden rounded-md"
+                      >
+                        <Image
+                          src={image || "/placeholder.svg"}
+                          alt={`${product.name} - Imagen ${index + 1}`}
+                          fill
+                          className="object-cover"
+                        />
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
 
                 <Button className={`w-full ${product.colors ? product.colors.gradient : ""}`}>

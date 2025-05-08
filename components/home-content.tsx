@@ -115,7 +115,13 @@ export default function HomeContent() {
               <Button size="lg" className={activeColors ? activeColors.gradient : "animate-pulse"}>
                 Ver Combos
               </Button>
-              <Button size="lg" variant="outline">
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => {
+                  document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" })
+                }}
+              >
                 Contactar
               </Button>
             </div>
@@ -135,7 +141,7 @@ export default function HomeContent() {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 mt-8">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 mt-8 mx-auto max-w-5xl">
             {products.map((product) => (
               <ProductCard
                 key={product.id}

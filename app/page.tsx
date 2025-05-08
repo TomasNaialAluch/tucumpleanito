@@ -50,31 +50,9 @@ export default function Home() {
               Carrito
             </Button>
           </nav>
-          
         </div>
       </header>
       <HomeContent />
-      <section id="contacto" className="bg-gray-100 py-16 px-4 text-center">
-  <h2 className="text-3xl font-bold mb-4 text-primary">¡Contactanos!</h2>
-  <p className="mb-6 text-lg">Estamos para ayudarte por WhatsApp o mail:</p>
-  <div className="flex justify-center gap-4 flex-wrap">
-    <a
-      href="https://wa.me/5491166246009"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full text-lg"
-    >
-      WhatsApp
-    </a>
-    <a
-      href="mailto:contacto@tucumpleanito.com"
-      className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full text-lg"
-    >
-      Mandanos un Mail
-    </a>
-  </div>
-</section>
-
       <footer className="border-t py-6 md:py-0">
         <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
           <div className="flex items-center gap-2">
