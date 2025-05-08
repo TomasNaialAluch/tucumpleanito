@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ImageGallery } from "@/components/image-gallery"
 import type { ProductType } from "@/types/product"
 
 interface ProductCardProps {
@@ -25,7 +24,7 @@ export function ProductCard({ product, onExpand, isExpanded }: ProductCardProps)
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.3 }}
-      className={`relative w-full ${isExpanded ? "md:col-span-2" : ""}`}
+      className={`relative w-full mx-auto ${isExpanded ? "md:col-span-2 max-w-4xl" : "max-w-sm"}`}
     >
       <Card
         className={`overflow-hidden transition-all duration-500 ${
@@ -155,7 +154,35 @@ export function ProductCard({ product, onExpand, isExpanded }: ProductCardProps)
                   </ul>
                 </div>
 
-                <ImageGallery images={product.additionalImages} productName={product.name} colors={product.colors} />
+                <div>
+                  <h3
+                    className={`text-xl font-semibold mb-3 ${
+                      product.colors
+                        ? `bg-gradient-to-r ${product.colors.textGradient} bg-clip-text text-transparent`
+                        : ""
+                    }`}
+                  >
+                    Galería
+                  </h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    {product.additionalImages.map((image, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: index * 0.1 }}
+                        className="relative h-40 overflow-hidden rounded-md"
+                      >
+                        <Image
+                          src={image || "/placeholder.svg"}
+                          alt={`${product.name} - Imagen ${index + 1}`}
+                          fill
+                          className="object-cover"
+                        />
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
 
                 <Button className={`w-full ${product.colors ? product.colors.gradient : ""}`}>
                   <svg
