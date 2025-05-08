@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss"
 
-const config = {
+const config: Config = {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
@@ -8,6 +8,15 @@ const config = {
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
     "*.{js,ts,jsx,tsx,mdx}",
+  ],
+  safelist: [
+    {
+      pattern: /(from|via|to|bg|text|border)-\[#[a-fA-F0-9]+\]/,
+      variants: ["hover"],
+    },
+    {
+      pattern: /(from|via|to)-(red|yellow|green|blue|purple|pink|orange|cyan|teal|lime|emerald|indigo|rose)-(100|200|300|400|500|600|700)/,
+    },
   ],
   theme: {
     container: {
@@ -75,6 +84,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+}
 
 export default config
