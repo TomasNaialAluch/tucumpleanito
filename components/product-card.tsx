@@ -39,7 +39,8 @@ export function ProductCard({ product, onExpand, isExpanded }: ProductCardProps)
               src={product.mainImage || "/placeholder.svg"}
               alt={product.name}
               fill
-              className="object-cover transition-transform duration-300 hover:scale-105"
+              className="object-contain transition-transform duration-300"
+
             />
             {product.isNew && (
               <Badge
