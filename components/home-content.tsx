@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { FloatingBalloons } from "@/components/floating-balloons"
 import { MermaidBalloons } from "@/components/mermaid-balloons"
 import { products } from "@/data/products"
+import emailjs from "emailjs-com"
 
 export default function HomeContent() {
   const [expandedProductId, setExpandedProductId] = useState<string | null>(null)
@@ -31,30 +32,44 @@ export default function HomeContent() {
     }
   }
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { id, value } = e.target
-    setFormData((prev) => ({
-      ...prev,
-      [id]: value,
-    }))
-  }
+ const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const { id, value } = e.target
+  setFormData((prev) => ({
+    ...prev,
+    [id]: value,
+  }))
+}
 
-  const handleSubmit = (e: FormEvent) => {
+const sendEmail = () => {
+  emailjs
+    .send(
+      "Tucumpleanito",
+      "template_wfkkroh",
+      {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      },
+      "eK0bneOLYPn9MyZCD"
+    )
+    .then(() => {
+      setFormSubmitted(true)
+      setTimeout(() => {
+        setFormSubmitted(false)
+        setFormData({ name: "", email: "", message: "" })
+      }, 3000)
+    })
+    .catch((error) => {
+      console.error("Error al enviar mensaje:", error)
+    })
+}
+
+
+    const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
-    // En un caso real, aquí enviaríamos el formulario
-    // Por ahora, solo mostraremos un mensaje de éxito
-    setFormSubmitted(true)
-
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setFormSubmitted(false)
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-      })
-    }, 3000)
+    sendEmail()
   }
+
 
   // Verificar qué combos están expandidos
   const isAnimalComboExpanded = expandedProductId === "1"
