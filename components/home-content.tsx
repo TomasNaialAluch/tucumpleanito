@@ -9,7 +9,8 @@ import { Button } from "@/components/ui/button"
 import { FloatingBalloons } from "@/components/floating-balloons"
 import { MermaidBalloons } from "@/components/mermaid-balloons"
 import { products } from "@/data/products"
-import emailjs from "emailjs-com"
+import emailjs from "@emailjs/browser"
+
 
 export default function HomeContent() {
   const [expandedProductId, setExpandedProductId] = useState<string | null>(null)
