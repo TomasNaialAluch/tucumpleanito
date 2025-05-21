@@ -43,7 +43,7 @@ export default function HomeContent() {
 const sendEmail = () => {
   emailjs
     .send(
-      "Tucumpleanito",
+        "tucumpleanito_gmail",
       "template_wfkkroh",
       {
         name: formData.name,
