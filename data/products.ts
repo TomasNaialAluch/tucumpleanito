@@ -34,16 +34,19 @@ export const products: ProductType[] = [
   '/images/animales/Set-vajilla-animales-en-la-selva-2.png',
   '/images/animales/Set-vajilla-animales-en-la-selva.png',
     ],
-    items: [
-      "10 platos de cartón",
-      "10 vasos de papel",
-      "20 servilletas",
-      "10 gorros de fiesta",
-      "1 mantel temático",
-      "10 bolsas de souvenir con diseños de animales",
-      "20 globos surtidos",
-      "1 piñata de león",
-    ],
+   items: [
+  "24 platos grandes con diseño de animales (23 cm)",
+  "24 platos chicos con diseño de animales (18 cm)",
+  "24 vasos con diseño selva",
+  "24 servilletas estampadas con animales",
+  "10 bolsitas de tela con cordón, ilustradas con distintos animales",
+  "Guirnalda verde de hojas artificiales",
+  "2 faroles colgantes con forma de cabeza de león y tigre",
+  "1 mantel temático de jirafa",
+  "Decoración de globos en colores tierra y verde (cantidad no determinada en imagen)",
+  "Set decorativo para pared con animales colgantes (tipo banner)"
+]
+,
     isNew: true,
     colors: {
       primary: "#618C03",
@@ -98,17 +101,18 @@ export const products: ProductType[] = [
   '/images/sirena/Vincha-Sirena-purpura-2.jpg',
   '/images/sirena/Vincha-Sirena-purpura.jpg',
     ],
-    items: [
-      "1 Set Collar Colgante de Cola de Sirena con Perlas Falsas, Pulsera, Anillo y Aretes: Collar 46 cm / Pulsera 16 cm / Anillo regulable 2,2 cm / Aros colgantes a presión 3,8 cm",
-      "Guirnalda iridiscente de 157 pulgadas con estrellas de mar de papel holográfico para decoración de fiestas con temática de la sirenita: 4 m de largo",
-      "1 Juego de vajilla de sirena de 80 piezas color púrpura: 20 platos grandes de 23 cm / 20 platos chicos de 18 cm / 20 vasos de 8,5 cm / 20 servilletas de 16,5 cm",
-      "1 pieza de horquilla de pelo de malla de tela de verano para niñas con cinta, diseño de cola de sirena y caracol de mar: 1 unidad",
-      "1 pieza Cortina flecos metalizada lila brillante de fiesta: 100 cm ancho × 200 cm largo",
-      "25 Bolsas de regalo con tema de sirena morada con cierre de torsión: 27 cm alto × 12,5 cm ancho",
-      "1 Mantel con diseño de sirena en color púrpura: 220 cm × 130 cm",
-      "Set de 5 globos de papel de aluminio con forma de cola de pez y concha para decoración de fiesta con temática de sirena: 2 globos estrella 45 cm / 2 globos almeja 54 × 51 cm / 1 globo cola de sirena 76 × 51 cm",
-      "1 Diadema con cola de sirena de lentejuelas: 1 unidad"
-    ],
+   items: [
+  "1 set de joyería de sirena: collar, pulsera, anillo y aros colgantes",
+  "1 guirnalda iridiscente con estrellas de mar",
+  "80 piezas de vajilla temática: 20 platos grandes, 20 chicos, 20 vasos y 20 servilletas",
+  "1 horquilla de pelo con diseño de sirena y caracol",
+  "1 cortina metalizada lila brillante",
+  "25 bolsitas de regalo con diseño de sirena y cierre de torsión",
+  "1 mantel temático de sirena en color púrpura",
+  "5 globos metálicos con forma de estrella, almeja y cola de sirena",
+  "1 diadema con cola de sirena de lentejuelas"
+],
+
     
     colors: {
       primary: "#F2CEDB",
